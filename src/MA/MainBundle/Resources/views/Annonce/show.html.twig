@@ -1,0 +1,147 @@
+{% extends "MAMainBundle:Accueil:index.html.twig" %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/annonce.css") }}" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+
+{% block body %}
+    <!--/breadcrumb-->
+    <div class="service-breadcrumb w3-agile">
+        <div class="container">
+            <div class="wthree_service_breadcrumb_left">
+                <ul>
+                    <li><a href="{{ path('ma_user_accueil') }}">Accueil</a> <i>|</i></li>
+                </ul>
+            </div>
+            <div class="wthree_service_breadcrumb_right">
+                <h3>Single Page</h3>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!--//breadcrumb-->
+    <section id="contact">
+        <div class="section-content">
+            <h1 class="section-header">Mon <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Annonce</span></h1>
+            <h3>Résumé de ma nouvelle annonce.</h3>
+        </div>
+        <div class="contact-section">
+            <div class="single w3ls">
+                <div class="container">
+                    <div class="col-md-8 single-left">
+                        <div class="bs-example">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Carousel indicators -->
+                                {% for key, image in images%}
+                                <ol class="carousel-indicators">
+                                    {% for i in 0..images|length -1 %}
+                                        {% if i == 0 %}
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        {% else %}
+                                            <li data-target="#myCarousel" data-slide-to={{ i }}></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ol>
+                                {% endfor %}
+                                <!-- Wrapper for carousel items -->
+                                <div class="carousel-inner">
+                                    {% if annonce.imagePrincipale is not empty %}
+                                    <div class="item active">
+                                        <img src="{{ asset('uploads/photos/' ~ annonce.imagePrincipale )}} " alt="{{ annonce.titre }}" style="height: 100%">
+                                    </div>
+                                    {% endif %}
+                                    {% if annonce.imageBis is not empty %}
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/photos/' ~ annonce.imageBis )}}" alt="{{ annonce.titre }}" style="height: 100%">
+                                    </div>
+                                    {% endif %}
+                                    {% if annonce.imageTer is not empty %}
+                                    <div class="item">
+                                        <img src="{{ asset('uploads/photos/' ~ annonce.imageTer )}}" alt="{{ annonce.titre }}" style="height: 100%">
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <!-- Carousel controls -->
+                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="single-left2">
+                            <h3>{{ annonce.titre }}</h3>
+                            <ul class="com">
+                                <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{ app.user.username }}</li>
+                                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ annonce.email }}</li>
+                                <li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><a href="{{ path('ma_user_accueil') }}">Valider mon annonce</a></li>
+                                <li><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><a href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a></li>
+                                <li><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><a href="{{ path('annonce_delete', {'id': annonce.id}) }}" onclick="return confirm('Confirmer la suppression de votre annonce ?')";>Supprimer</a></li>
+                            </ul>
+                            <div class="single-left2-sub">
+                                <ul>
+                                    <li>Description de l'offre: </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single-left3" id="description">
+                            <p><span>{{ annonce.description }}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-right">
+                        <div class="blo-top">
+                            <div class="tech-btm">
+                                <h4>Contacter le vendeur</h4>
+                                <div class="name">
+                                    {{ form_start(contact_form, {'class': 'form-control'}) }}
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Adresse email</label>
+                                            {{ form_errors(contact_form.emailAdress)}}
+                                            {{ form_widget(contact_form.emailAdress)}}
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Envoyer un message au vendeur</label>
+                                            {{ form_errors(contact_form.message)}}
+                                            {{ form_widget(contact_form.message)}}
+                                        </div>
+                                        <div>
+                                            <input type="submit" value="Envoyer">
+                                        </div>
+                                    </div>
+                                    {{ form_end(contact_form) }}
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blo-top1">
+                            <div class="agileits_twitter_posts tech-btm" id="detail_annonce">
+                                <h4>Détail de l'annonce</h4>
+                                <div class="row">Marque: {{ annonce.marque }}</div>
+                                <div class="row">Modele: {{ annonce.modele }}</div>
+                                <div class="row">Prix: {{ annonce.prix }}</div>
+                                <div class="row">Telephone: {{ annonce.telephone }}</div>
+                                {#<ul>
+                                    <li><p><span>Marque: {{ annonce.marque }}</span></p></li>
+                                    <li><p><span>Modele: {{ annonce.modele }}</span></p></li>
+                                    <li><p><span>Prix: {{ annonce.prix }}</span></p></li>
+                                    <li><p><span>Telephone: {{ annonce.telephone }}</span></p></li>
+                                </ul>#}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+

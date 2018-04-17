@@ -1,0 +1,36 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block fos_user_content %}
+    <div class="container" id="registration_container">
+        <div class="banner-info">
+            <h1><a href="{{ path ('ma_main_homepage') }}"><span class="logo-sub" id="titre">Mes Lunettes.com</span> </a></h1>
+            <p>Vendez – Echangez - Cherchez – Achetez!</p>
+        </div>
+        <div class="col-md-offset-4 col-md-4" id="form_box_registration">
+            <div class="col-md-offset-3 col-md-3">
+                <h3>Inscription</h3>
+            </div>
+            <div class="login-top sign-top one" id="body_box_registration">
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {{ form_widget(form) }}
+                <div>
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-offset-2 col-md-8" id="title_social_box">
+                <h3>Inscription avec</h3>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a href="{{ asset('http://meslunettes.alwaysdata.net/connect/facebook') }}"><span class="icons"></span><span class="text">Facebook</span></a></li>
+                    {#<li class="ggp"><a href="{{ asset('//localhost/meslunettes.com/web/app_dev.php/connect/google') }}"><span class="icons"></span><span class="text">Google+</span></a></li>#}
+                    <li class="ggp"><a href="{{ asset('http://meslunettes.alwaysdata.net/connect/google') }}"><span class="icons"></span><span class="text">Google+</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content%}

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>meslunettes.com</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Catchy Carz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="{{ asset("css/bootstrap.css") }}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/jquery-ui/jquery-ui.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/zoomslider.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/component.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/main.css") }}" />
+    <script type="text/javascript" src="{{ asset("js/modernizr-2.6.2.min.js") }}"></script>
+    <!--/web-fonts-->
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,300,300italic,700,400italic') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Wallpoet') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Ubuntu:400,500,700,300') }}" rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+
+    <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.zoomslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.flexisel.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/facebook.js') }}"></script>
+</head>
+<body>
+<!--/banner-section-->
+{#<div id="demo-1" data-zs-src='["images/2.jpg", "images/1.jpg", "images/3.jpg"]' data-zs-overlay="dots">#}
+<div id="banner" style="background-image: url({{ asset('images/main_background.jpg') }})">
+    <div class="demo-inner-content">
+        <div class="header-top">
+            <!-- //header-right -->
+            {% include 'header_right.html.twig' %}
+            <!-- //header-right -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <!--banner-info-->
+        {% include 'banner.html.twig' %}
+        <!--//banner-info-->
+        <!-- //sign-up-->
+        {% include 'inscription.html.twig' %}
+        <!-- //sign-up-->
+    </div>
+</div>
+<!--//banner-section-->
+{% block body %}{% endblock body %}
+
+<!--//featured_section-->
+{% include 'featured.html.twig' %}
+<!--//featured_section-->
+
+<!--/avis-utilisateurs-->
+{% include 'avis.html.twig' %}
+
+<!-- Présentation -->
+{% include 'presentation.html.twig' %}
+<!-- //Présentation -->
+
+<!-- footer -->
+{% include 'footer.html.twig' %}
+<!-- footer -->
+
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#flexiselDemo").flexisel({
+            visibleItems:1,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed:1000,
+            pauseOnHover:true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 1
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 1
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#flexiselDemo1").flexisel({
+            visibleItems: 4,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover:true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

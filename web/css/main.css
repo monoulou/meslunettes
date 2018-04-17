@@ -1,0 +1,317 @@
+#presentation
+{
+    text-align: center;
+}
+
+#statut
+{
+    color: white;
+}
+
+#flash_message
+{
+    background: #3a6186; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*-----------------------*/
+/*--//registration-box --*/
+/*-- --------------------*/
+#registration_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#form_box_registration
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#body_box_registration
+{
+    margin-top: 15px;
+}
+
+#fos_user_registration_form_email
+{
+    border-radius: 0px;
+    height: 44px;
+}
+
+#fos_user_registration_form_username
+{
+    border-radius: 0px;
+}
+
+#fos_user_registration_form_plainPassword_first
+{
+    border-radius: 0px;
+}
+
+#fos_user_registration_form_plainPassword_second
+{
+    border-radius: 0px;
+}
+
+
+#title_social_box
+{
+    margin-bottom: 20px;
+}
+
+/*-----------------------*/
+/*----//login-box -------*/
+/*-- --------------------*/
+#login_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#form_box_login
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#body_box_login
+{
+    margin-top: 15px;
+}
+
+#error_login
+{
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+/*-------------------------------*/
+/*----//resetting-request -------*/
+/*-- ----------------------------*/
+#request_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#form_box_request
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#request_content
+{
+    text-align: center;
+}
+
+#title_request_container
+{
+    text-align: center;
+}
+
+/*-------------------------------*/
+/*----------//check-email -------*/
+/*-- ----------------------------*/
+
+#check_email_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#email_check_box
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#check_email_title
+{
+    text-align: center;
+}
+
+
+/*-------------------------------*/
+/*------------//confirmed -------*/
+/*-- ----------------------------*/
+
+#confirmed_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#confirmed_box
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#confirmed_title
+{
+    text-align: center;
+}
+
+#confirmed_content
+{
+    text-align: center;
+}
+
+/*-------------------------------*/
+/*---------//reset --------------*/
+/*-- ----------------------------*/
+#reset_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#reset_box
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#reset_title
+{
+    text-align: center;
+}
+
+#reset_content
+{
+    text-align: center;
+}
+
+/*-------------------------------*/
+/*--------//hwi registration ----*/
+/*-- ----------------------------*/
+
+#hwio_registration_container
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#form_box_hwio_registration
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#body_box_hwio_registration
+{
+    margin-top: 230px;
+}
+
+#profile_picture
+{
+    width: 200px;
+    height: 200px;
+}
+
+#div_image
+{
+    margin-top: 15px;
+    padding-left: 35px;
+    padding-right: 25px;
+}
+
+/*--------------------------------*/
+/*-//hwi registration success ----*/
+/*-- ----------------------------*/
+
+#registration_success
+{
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+#success_box
+{
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+#success_title
+{
+    text-align: center;
+}
+
+#success_content
+{
+    text-align: center;
+}
+
+
+/*-----------------------------------*/
+/*-//override dataTable template ----*/
+/*-- --------------------------------*/
+
+table.dataTable
+{
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+table
+{
+    background-color: white;
+}
+
+div.dataTables_wrapper div.dataTables_filter label
+{
+    font-size: 0.9em;
+}
+
+div.dataTables_wrapper div.dataTables_length label
+{
+    font-size: 0.9em;
+}
+
+div.dataTables_wrapper div.dataTables_length select
+{
+    font-size: 0.9em;
+}
+
+div.dataTables_wrapper div.dataTables_filter input
+{
+    font-size: 0.9em;
+}
+
+table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child
+{
+    float: right;
+}
+
+div.dataTables_wrapper div.dataTables_paginate
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9em;
+}
+
+div.dataTables_wrapper div.dataTables_info
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9em;
+}

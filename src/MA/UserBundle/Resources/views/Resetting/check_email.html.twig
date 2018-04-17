@@ -1,0 +1,22 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block fos_user_content %}
+    <div class="container" id="check_email_container">
+        <div class="col-md-offset-3 col-md-6" id="email_check_box">
+            <div class="col-md-offset-1 col-md-10" id="check_email_title">
+                <h3>Email envoyé</h3>
+            </div>
+            <div class="login-inner" id="request_content">
+                <div class="login-top">
+                    <p>{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}</p>
+                    <p><a href="{{ path('ma_main_homepage') }}"><span class="glyphicon glyphicon-chevron-left"></span>Retour vers l'accueil</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content %}

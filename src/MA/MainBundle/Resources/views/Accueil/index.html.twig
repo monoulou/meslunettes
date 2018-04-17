@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>meslunettes.com</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Catchy Carz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/jquery-ui.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/jquery-ui.structure.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/jquery-ui.theme.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/bootstrap.css") }}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/bootstrapFileInput/css/fileinput.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/bootstrapFileInput/themes/explorer/theme.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/dataTables/datatables.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("bundles/dataTables/css/dataTables.bootstrap.min.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/lightslider.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/zoomslider.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/component.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/annonce.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/main.css") }}" />
+
+    <!--/web-fonts-->
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,300,300italic,700,400italic') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Wallpoet') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ asset('//fonts.googleapis.com/css?family=Ubuntu:400,500,700,300') }}" rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+
+    <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/lightslider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/js/plugins/piexif.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/js/plugins/sortable.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/js/plugins/purify.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/js/fileinput.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/themes/explorer/theme.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrapFileInput/js/locales/fr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/dataTables/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/dataTables/js/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.zoomslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.flexisel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.mask.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <!-- Include Google Maps JS API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCO8naz9dPide6kxouBBlRz4enkpsxWrvU"></script>
+    <script src="{{ asset('js/autocomplete.js') }}" type="text/javascript" ></script>
+</head>
+<body>
+<!--/banner-section-->
+<div id="banner" style="background-image: url({{ asset('images/main_background.jpg') }})">
+    <div class="demo-inner-content">
+        <div class="header-top">
+            <!-- /header-left -->
+            {% include 'MAMainBundle:Accueil:header_left.html.twig' %}
+            <!-- //header-left -->
+            <!-- //header-right -->
+            {% include 'MAMainBundle:Accueil:header_right.html.twig' %}
+            <!-- //header-right -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <!--banner-info-->
+        {% include 'MAMainBundle:Accueil:banner.html.twig' %}
+        <!--//banner-info-->
+    </div>
+</div>
+<!--//banner-section-->
+{% block stylesheets %}{% endblock %}
+{% block javascripts %}{% endblock %}
+<div class="row" id="flash_message">
+    <div class="col-md-offset-5">
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% block body %}
+    {% include 'MAMainBundle:Accueil:dashboard.html.twig' %}
+{% endblock body %}
+<!-- footer -->
+{% include 'footer.html.twig' %}
+<!-- footer -->
+</body>
+</html>

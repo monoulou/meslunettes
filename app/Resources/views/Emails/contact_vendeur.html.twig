@@ -1,0 +1,13 @@
+{% extends ":Emails:base_email.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        Bonjour,<br>
+        Vous avez reçu un nouveau message.<br><br>
+        Contenu du message:<br>
+        {{ msg }}
+    </div>
+{% endblock body %}

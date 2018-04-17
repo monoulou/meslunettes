@@ -1,0 +1,19 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="container" id="confirmed_container">
+        <div class="col-md-offset-3 col-md-6" id="confirmed_box">
+            <div class="col-md-offset-1 col-md-10" id="confirmed_title">
+                <h3>Confirmation</h3>
+            </div>
+            <div class="login-inner" id="confirmed_content">
+                <div class="login-top">
+                    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+                    <p><a href="{{ path('ma_user_accueil') }}"><span class="glyphicon glyphicon-chevron-left"></span>Retour vers l'accueil</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content %}

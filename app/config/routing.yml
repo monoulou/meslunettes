@@ -1,0 +1,61 @@
+ma_main_annonce:
+    resource: "@MAMainBundle/Controller/AnnonceController.php"
+    type:     annotation
+
+
+#ma_user:
+#    resource: "@MAUserBundle/Resources/config/routing.yml"
+#    prefix:   /
+
+ma_main:
+    resource: "@MAMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@MAMainBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+facebook_login:
+    path: /login/check-facebook
+
+google_login:
+    path: /login/check-google
+
+#FOSUserBundle routing
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#liip_imagine routing
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.yaml"
+
+#easyadmin routing
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
+
+#Mon app routing
+ma_user_accueil:
+    resource: "@MAMainBundle/Resources/config/routing/accueil/accueil.yml"
+    prefix: /user
+
+ma_user_annonces:
+    resource: "@MAMainBundle/Resources/config/routing/annonces/annonces.yml"
+    prefix: /user
+
+
+
+
+
+
+
+

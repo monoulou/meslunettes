@@ -1,0 +1,4 @@
+ma_user_accueil:
+    path:     /accueil
+    defaults:  { _controller: MAMainBundle:Annonce:index }
+    methods:  [GET, POST]

@@ -1,0 +1,24 @@
+ma_user_annonces:
+    path:     annonce/list
+    defaults:  { _controller: MAMainBundle:Annonce:index }
+    methods:  [GET, POST]
+
+annonce_show:
+    path:     annonce/{id}/show
+    defaults: { _controller: "MAMainBundle:Annonce:show" }
+    methods:  [GET, POST]
+
+annonce_new:
+    path:     annonce/new
+    defaults: { _controller: "MAMainBundle:Annonce:new" }
+    methods:  [GET, POST]
+
+annonce_edit:
+    path:     annonce/{id}/edit
+    defaults: { _controller: "MAMainBundle:Annonce:edit" }
+    methods:  [GET, POST]
+
+annonce_delete:
+    path:     annonce/{id}/delete
+    defaults: { _controller: "MAMainBundle:Annonce:delete" }
+    methods:  [GET, POST, DELETE]

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0b1da4cc-fa60-4859-a10c-cda7c14b03b8" name="mesluenettes.com" url="http://ftp-meslunettes.alwaysdata.net">
+        <fileTransfer host="ftp-meslunettes.alwaysdata.net" port="21" rootFolder="/www/meslunettes.com/" username="meslunettes">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

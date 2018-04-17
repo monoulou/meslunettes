@@ -1,0 +1,59 @@
+<div id="sidebar">
+    <h4 class="menu">Menu</h4>
+    <ul>
+        <li><a href="{{ path('annonce_new') }}">Déposer une annonce</a>
+        {#<li><a href="#">Nouvelle annonce<i class="glyphicon glyphicon-triangle-bottom"> </i> </a>
+            <ul>
+                <li><a href="#"><span>Find New Cars</span></a></li>
+                <li><a href="#"><span>Upcoming Cars</span></a></li>
+                <li><a href="#"><span>Recommend Me A Car</span></a></li>
+                <li><a href="#"><span>New Launches</span></a></li>
+                <li><a href="#"><span>Locate Dealer</span></a></li>
+                <li class="last"><a href="#"><span>On Road Price</span></a></li>
+            </ul>#}
+        </li>
+        <li><a href="#">Offres</a></li>
+        {#<li><a href="#">Used Cars <i class="glyphicon glyphicon-triangle-bottom"> </i></a>
+            <ul>
+                <li><a href="#">Find Used cars</a></li>
+                <li><a href="#">Sell Your Car</a></li>
+                <li><a href="#"><span>Search Used Cars</span></a></li>
+                <li class="last"><a href="#"><span>Used Car Valuation</span></a></li>
+                <li><a href="#"><span>Locate Dealer</span></a></li>
+
+            </ul>
+        </li>#}
+        <li><a href="#">Mon compte</a></li>
+        {#<li><a href="#">News And Reviews</a></li>
+        <li><a href="#">Dealers And Services</a></li>
+        <li><a href="#">More <i class="glyphicon glyphicon-triangle-bottom"> </i> </a>
+            <ul>
+                <li><a href="#"><span>Car Loan</span></a></li>
+                <li><a href="#"><span>Short Codes</span></a></li>
+                <li><a href="#"><span>Car Accessories</span></a></li>
+                <li><a href="#"><span>Tips and Advices</span></a></li>
+                <li class="last"><a href="#"><span>Privacy Policy</span></a></li>
+
+            </ul>
+        </li>
+        <li><a href="#">Insurance</a></li>
+        <li><a href="#">Catchy Carz app</a><li>#}
+    </ul>
+    <div id="sidebar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<script>
+    var sidebarbtn = document.getElementById('sidebar-btn');
+    var sidebar = document.getElementById('sidebar');
+    sidebarbtn.addEventListener('click', function () {
+        if(sidebar.classList.contains('visible')){
+            sidebar.classList.remove('visible');
+        }else {
+            sidebar.className = 'visible';
+        }
+    });
+</script>

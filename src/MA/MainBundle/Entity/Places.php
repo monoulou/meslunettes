@@ -1,0 +1,290 @@
+<?php
+
+namespace MA\MainBundle\Entity;
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Places
+ * @ORM\Table(name="places")
+ * @ORM\Entity(repositoryClass="MA\MainBundle\Repository\PlacesRepository")
+ */
+class Places
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adress", type="string", length=255)
+     */
+    private $adress;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="street_number", type="string", length=255)
+     */
+    private $street_number;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="route", type="string", length=255)
+     */
+    private $route;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="locality", type="string", length=255)
+     */
+    private $locality;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="administrative_area_level_1", type="string", length=255)
+     */
+    private $administrative_area_level_1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=255)
+     */
+    private $country;
+    
+    /**
+     * une adresse pour une annonce.
+     * @ORM\OneToOne(targetEntity="Annonce", inversedBy="place")
+     * @ORM\JoinColumn(name="annonce_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $annonce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="postal_code", type="string", length=255)
+     */
+    private $postal_code;
+
+
+    /*public function __toString()
+    {
+        return $this->postal_code;
+    }*/
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Set adress
+     *
+     * @param string $adress
+     *
+     * @return Places
+     */
+    public function setAdress($adress)
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    /**
+     * Get adress
+     *
+     * @return string
+     */
+    public function getAdress()
+    {
+        return $this->adress;
+    }
+
+    /**
+     * Set streetNumber
+     *
+     * @param string $streetNumber
+     *
+     * @return Places
+     */
+    public function setStreetNumber($streetNumber)
+    {
+        $this->street_number = $streetNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get streetNumber
+     *
+     * @return string
+     */
+    public function getStreetNumber()
+    {
+        return $this->street_number;
+    }
+
+    /**
+     * Set route
+     *
+     * @param string $route
+     *
+     * @return Places
+     */
+    public function setRoute($route)
+    {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return string
+     */
+    public function getRoute()
+    {
+        return $this->route;
+    }
+
+    /**
+     * Set locality
+     *
+     * @param string $locality
+     *
+     * @return Places
+     */
+    public function setLocality($locality)
+    {
+        $this->locality = $locality;
+
+        return $this;
+    }
+
+    /**
+     * Get locality
+     *
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->locality;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Places
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set postalCode
+     *
+     * @param string $postalCode
+     *
+     * @return Places
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->postal_code = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Get postalCode
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->postal_code;
+    }
+
+    /**
+     * Set annonce
+     *
+     * @param \MA\MainBundle\Entity\Annonce $annonce
+     *
+     * @return Places
+     */
+    public function setAnnonce(\MA\MainBundle\Entity\Annonce $annonce = null)
+    {
+        $this->annonce = $annonce;
+
+        return $this;
+    }
+
+    /**
+     * Get annonce
+     *
+     * @return \MA\MainBundle\Entity\Annonce
+     */
+    public function getAnnonce()
+    {
+        return $this->annonce;
+    }
+
+    /**
+     * Set administrativeAreaLevel1
+     *
+     * @param string $administrativeAreaLevel1
+     *
+     * @return Places
+     */
+    public function setAdministrativeAreaLevel1($administrativeAreaLevel1)
+    {
+        $this->administrative_area_level_1 = $administrativeAreaLevel1;
+
+        return $this;
+    }
+
+    /**
+     * Get administrativeAreaLevel1
+     *
+     * @return string
+     */
+    public function getAdministrativeAreaLevel1()
+    {
+        return $this->administrative_area_level_1;
+    }
+}
